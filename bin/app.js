@@ -1,13 +1,7 @@
 "use strict";
 var express = require('express');
-var app;
-(function (app_1) {
-    var app = express();
-    app.use('/', function (req, res) {
-        res.send("Ok");
-    });
-    app.listen(9000, function () {
-        console.log("App running on port :9000");
-    });
-})(app || (app = {}));
+var server_1 = require('./server');
+var app = express();
+var server = new server_1.Server(app, 3000);
+server.run();
 //# sourceMappingURL=app.js.map

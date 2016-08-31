@@ -1,27 +1,25 @@
 "use strict";
-var app;
-(function (app_1) {
-    var core;
-    (function (core) {
-        var Server = (function () {
-            function Server(app, port) {
-                this.app = app;
-                this.port = port;
-            }
-            Server.prototype.configureMiddleware = function (app) {
-            };
-            Server.prototype.configureRoutes = function (app) {
-                app.use("/example", app.routes.Example.Index);
-            };
-            Server.prototype.run = function () {
-                var _this = this;
-                this.app.listen(this.port, function () {
-                    console.log("Server running on port :" + _this.port + ".");
-                });
-            };
-            return Server;
-        }());
-        core.Server = Server;
-    })(core = app_1.core || (app_1.core = {}));
-})(app || (app = {}));
+var exampleRouter_1 = require('./routes/exampleRouter');
+var Server = (function () {
+    function Server(app, port) {
+        this.app = app;
+        this.port = port;
+        this._App = app;
+        this._Port = port;
+        this.configureRoutes(this._App);
+    }
+    Server.prototype.configureMiddleware = function (app) {
+    };
+    Server.prototype.configureRoutes = function (app) {
+        app.use('/', exampleRouter_1.Index);
+    };
+    Server.prototype.run = function () {
+        var _this = this;
+        this.app.listen(this.port, function () {
+            console.log("Server running on port :" + _this._Port + ".");
+        });
+    };
+    return Server;
+}());
+exports.Server = Server;
 //# sourceMappingURL=server.js.map

@@ -1,30 +1,34 @@
 ///<refrence path='/routes/exampleRouter' />
 import express = require('express');
-import * as Example from './routes/exampleRouter'
+import {Index} from './routes/exampleRouter';
 
-module app.core {
-    /**
-     * Server
-     */
-    export class Server {
-        constructor(private app: express.Application, private port: number) {
-            
-        }
+export class Server {
 
-        // Middlewear
-        private configureMiddleware(app: express.Application): void {
-            //app.use();
-        }
+    private _App: express.Application;
+    private _Port: number
 
-        // Routes
-        private configureRoutes(app: express.Application): void {
-            app.use("/example", app.routes.Example.Index);
-        }
+    constructor(private app: express.Application, private port: number) {
+        this._App = app;
+        this._Port = port;
 
-        public run(): void {
-            this.app.listen(this.port, () => {
-                console.log(`Server running on port :${this.port}.`);
-            });
-        }
+        // Configure routes
+        this.configureRoutes(this._App);
+    }
+
+    // Middlewear
+    private configureMiddleware(app: express.Application): void {
+        //app.use();
+    }
+
+    // Routes
+    private configureRoutes(app: express.Application): void {
+        //app.use("/", Index);
+        app.use('/', Index)
+    }
+
+    public run(): void {
+        this.app.listen(this.port, () => {
+            console.log(`Server running on port :${this._Port}.`);
+        });
     }
 }
