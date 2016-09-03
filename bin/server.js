@@ -1,19 +1,22 @@
 "use strict";
-var exampleRouter_1 = require('./routes/exampleRouter');
+var logger_1 = require('./middlewear/logger');
+var homeRoute_1 = require('./routes/homeRoute');
 var Server = (function () {
     function Server(app, port) {
         this.app = app;
         this.port = port;
         this._App = app;
         this._Port = port;
-        this.configureRoutes(this._App);
+        this.ConfigureMiddleware(this._App);
+        this.ConfigureRoutes(this._App);
     }
-    Server.prototype.configureMiddleware = function (app) {
+    Server.prototype.ConfigureMiddleware = function (app) {
+        app.use(logger_1.Logger.LogRequest);
     };
-    Server.prototype.configureRoutes = function (app) {
-        app.use('/', exampleRouter_1.Index);
+    Server.prototype.ConfigureRoutes = function (app) {
+        app.use('/', homeRoute_1.Home.Index);
     };
-    Server.prototype.run = function () {
+    Server.prototype.Run = function () {
         var _this = this;
         this.app.listen(this.port, function () {
             console.log("Server running on port :" + _this._Port + ".");

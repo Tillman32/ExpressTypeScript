@@ -1,6 +1,7 @@
-///<refrence path='/routes/exampleRouter' />
+///<refrence path='/routes/homeRoute' />
 import express = require('express');
-import {Index} from './routes/exampleRouter';
+import {Logger} from './middlewear/logger'
+import {Home} from './routes/homeRoute';
 
 export class Server {
 
@@ -11,22 +12,24 @@ export class Server {
         this._App = app;
         this._Port = port;
 
-        // Configure routes
-        this.configureRoutes(this._App);
+        // Configue Middlewear
+        this.ConfigureMiddleware(this._App);
+        // Configure Routes
+        this.ConfigureRoutes(this._App);
     }
 
     // Middlewear
-    private configureMiddleware(app: express.Application): void {
-        //app.use();
+    private ConfigureMiddleware(app: express.Application): void {
+        app.use(Logger.LogRequest);
     }
 
     // Routes
-    private configureRoutes(app: express.Application): void {
-        //app.use("/", Index);
-        app.use('/', Index)
+    private ConfigureRoutes(app: express.Application): void {
+        // Define routes
+        app.use('/', Home.Index)
     }
 
-    public run(): void {
+    public Run(): void {
         this.app.listen(this.port, () => {
             console.log(`Server running on port :${this._Port}.`);
         });
