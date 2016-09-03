@@ -4,7 +4,7 @@ This project is a starting point for writing Express applications using TypeScri
 
 ## Installation ##
 
- 1. git clone https: //
+ 1. git clone https://github.com/Tillman32/ExpressTypeScript.git .
  2. cd ExpressTypeScript && npm install
  3. npm start
 
