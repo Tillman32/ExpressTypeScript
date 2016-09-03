@@ -1,6 +1,21 @@
-#ExpressTypeScript
+#ExpressTypeScript#
 
-This project is a starting point for writing Express applications using TypeScript in a class based, strongly typed manner.
+This project is a starting point for writing Express applications using TypeScript in a class based, strongly typed manner. 
+
+## Installation ##
+
+ 1. git clone https: //
+ 2. cd ExpressTypeScript && npm install
+ 3. npm start
+
+## Typings (optional) ##
+Typings are required to develop against the TypeScript codebase. Please use the below commands to install the required typings.
+
+ 1. typings install dt~node --global
+ 2. typings install dt~express serve-static express-serve-static-core --global
+
+----------
+
 
 The MIT License (MIT)
 Copyright (c) 2016
