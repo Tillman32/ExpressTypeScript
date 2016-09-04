@@ -2,8 +2,9 @@
 var Home = (function () {
     function Home() {
     }
-    Home.Index = function (request, response) {
+    Home.Index = function (request, response, next) {
         response.send("Ok");
+        next();
     };
     return Home;
 }());

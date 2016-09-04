@@ -1,7 +1,6 @@
 /// <reference path="../typings/index.d.ts" />
 import express = require('express');
-import {Server} from './server';
+import {Service} from './services/service';
 
-let app = express();
-var server = new Server(app, 3000);
-server.Run();
+var service = new Service({app: express(), port: 3000});
+service.Run();

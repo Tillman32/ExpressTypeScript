@@ -1,7 +1,6 @@
 "use strict";
 var express = require('express');
-var server_1 = require('./server');
-var app = express();
-var server = new server_1.Server(app, 3000);
-server.Run();
+var service_1 = require('./services/service');
+var service = new service_1.Service({ app: express(), port: 3000 });
+service.Run();
 //# sourceMappingURL=app.js.map

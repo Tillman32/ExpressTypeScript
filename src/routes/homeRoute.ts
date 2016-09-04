@@ -2,9 +2,7 @@ import express = require('express');
 
 export class Home {
     // Home Route
-    public static Index(request: express.Request, response: express.Response, next: express.NextFunction) {
-        // Do Stuff
+    public static Index(request: express.Request, response: express.Response) {
         response.send("Ok");
-        next();
     }
 }
