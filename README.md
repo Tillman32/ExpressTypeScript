@@ -14,6 +14,41 @@ Typings are required to develop against the TypeScript codebase. Please use the 
  1. ```typings install dt~node --global```
  2. ```typings install dt~express serve-static express-serve-static-core --global```
 
+## Examples ##
+
+### Adding a new route
+To add a new route, simply create a new TypeScript class inside the ```routes/``` directory, like so:
+```TypeScript
+import express = require('express');
+export class NewRoute {
+    public static Index(request: express.Request, response: express.Response) {
+        response.send("Hello Route!");
+    }
+}
+```
+You'll also need to tell the express service about the new route. Open ```services/service.ts``` and register the route inside the ```ConfigureRoutes``` method. Also, don't forget to import the class at the top:
+```TypeScript
+import {Index} from '../routess/newRoute';
+
+""" Code removed for brevity """
+
+// Routes
+private ConfigureRoutes(app: express.Application): void {
+    // Define routes
+    app.get('/', Home.Index)
+
+    // Adding my awesome new route here
+    app.get('/NewRoute, NewRoute.Index)
+
+    // 500 Error
+    app.get('/500', StatusCode.ServerError)
+
+    // 404 Route, always keep this last
+    app.get('/*', StatusCode.NotFound)
+}
+```
+Thats it!
+
 ----------
 
 
