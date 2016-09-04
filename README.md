@@ -38,7 +38,7 @@ private ConfigureRoutes(app: express.Application): void {
     app.get('/', Home.Index)
 
     // Adding my awesome new route here
-    app.get('/NewRoute, NewRoute.Index)
+    app.get('/NewRoute', NewRoute.Index)
 
     // 500 Error
     app.get('/500', StatusCode.ServerError)
