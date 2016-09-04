@@ -4,15 +4,15 @@ This project is a starting point for writing Express applications using TypeScri
 
 ## Installation ##
 
- 1. git clone https://github.com/Tillman32/ExpressTypeScript.git .
- 2. cd ExpressTypeScript && npm install
- 3. npm start
+ 1. ```git clone https://github.com/Tillman32/ExpressTypeScript.git .```
+ 2. ```cd ExpressTypeScript && npm install```
+ 3. ```npm start```
 
 ## Typings (optional) ##
 Typings are required to develop against the TypeScript codebase. Please use the below commands to install the required typings.
 
- 1. typings install dt~node --global
- 2. typings install dt~express serve-static express-serve-static-core --global
+ 1. ```typings install dt~node --global```
+ 2. ```typings install dt~express serve-static express-serve-static-core --global```
 
 ----------
 
