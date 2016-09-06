@@ -1,6 +1,6 @@
 import express = require('express');
 import {IExpressApp} from './iExpressApp';
-import {Logger} from '../middlewear/logger';
+import {Logger} from '../middleware/logger';
 import {StatusCode} from '../routes/statusCode'
 import {Home} from '../routes/homeRoute';
 

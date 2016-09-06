@@ -1,5 +1,5 @@
 "use strict";
-var logger_1 = require('../middlewear/logger');
+var logger_1 = require('../middleware/logger');
 var statusCode_1 = require('../routes/statusCode');
 var homeRoute_1 = require('../routes/homeRoute');
 var Service = (function () {
