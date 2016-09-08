@@ -11,8 +11,12 @@ This project is a starting point for writing Express applications using TypeScri
 ## Typings (optional) ##
 Typings are required to develop against the TypeScript codebase. Please use the below commands to install the required typings.
 
- 1. ```typings install dt~node --global```
- 2. ```typings install dt~express serve-static express-serve-static-core --global```
+ 1. Install nodemon globally (if not already installed): ```npm run preinstall```
+ 2. ```typings install dt~node --global```
+ 3. ```typings install dt~express serve-static express-serve-static-core --global```
+ 4. ```typings install dt~dotenv --global --save```
+ 5. ```typings install dt~core-js --global --save```
+ 6. ```npm run dev```
 
 ## Examples ##
 
