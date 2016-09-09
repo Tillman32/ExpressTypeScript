@@ -10,12 +10,12 @@
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
     "typings": "^1.3.3"
   },
   "scripts": {
-    "preinstall": "npm i -g nodemon",
     "start": "export SERVICE_PORT=3000||set SERVICE_PORT=3000 && nodemon bin/app.js",
-    "build": "tsc -w",
+    "build": "tsc -w -p .",
     "dev": "npm run build | npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
